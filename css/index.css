@@ -1,0 +1,54 @@
+#page {
+	overflow-x: hidden;
+	padding-bottom: 15px;
+}
+
+#header {
+	padding-top: 45px;
+	padding-bottom: 45px;
+}
+#main {
+	max-width: 400px;
+	margin-left: auto;
+	margin-right: auto;
+	padding-left: 15px;
+	padding-right: 15px;
+}
+
+#view {
+	font-family: Arial;
+	font-weight: lighter;
+	font-size: 5rem;
+	margin-bottom: 50px;
+}
+#min, #sec, #hr {
+	position: relative;
+	top: 6px;
+}
+.eop-bg-primary {
+	background-color: #33daf1;
+}
+
+.eop-text-primary {
+	color: #33daf1;
+}
+.eop-btn {
+	padding: 10px;
+	border-radius: 5px;
+	background-color: transparent;
+	border: none;
+}
+.eop-btn-primary {
+	background-color: #33daf1;
+}
+.eop-btn-outline-primary {
+	border: 1px solid #33daf1;
+	color: #33daf1;
+}
+.eop-btn-primary:hover,
+.eop-btn-primary:focus,
+.eop-btn-outline-primary:hover,
+.eop-btn-outline-priamry:focus {
+	outline: none;
+	transform: scale(1.2);
+}
