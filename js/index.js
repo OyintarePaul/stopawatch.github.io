@@ -21,16 +21,16 @@ let loop;
 
 class Timer {
 	constructor() {
+		this.minisecond = 0;
 		this.second = 0;
 		this.minute = 0;
-		this.hour = 0;
 		this.started = false;
 		this.restart = true;
 	}
 	start() {
 		loop = setInterval(() => {
 			this.update();
-			}, 1000);
+			}, 10);
 		this.started = true;
 		this.restart = false;
 	}
@@ -43,29 +43,29 @@ class Timer {
 		this.stop();
 		this.started = false;
 		this.restart = true;
+		this.minisecond = 0;
 		this.second = 0;
 		this.minute = 0;
-		this.hour = 0;
 		console.log("Stopwatch reset");
+		ms.textContent = formatNum(0);
 		sec.textContent = formatNum(0);
 		min.textContent = formatNum(0);
-		hr.textContent = formatNum(0);
 	}
 	update() {
-		if (this.second === 59) {
-			this.second = 0;
-			if (this.minute === 59) {
-				this.hour++;
-				this.minute = 0;
-			} else {
+		if (this.minisecond === 99) {
+			this.minisecond = 0;
+			if (this.second === 59) {
 				this.minute++;
+				this.second = 0;
+			} else {
+				this.second++;
 			}
 		} else {
-			this.second++
+			this.minisecond++
 		}
+		ms.textContent = formatNum(timer.minisecond);
 		sec.textContent = formatNum(timer.second);
 		min.textContent = formatNum(timer.minute);
-		hr.textContent = formatNum(timer.hour);
 	}
 	
 
@@ -76,9 +76,9 @@ class Timer {
 const timer = new Timer();
 
 
+const ms = document.getElementById("ms");
 const sec = document.getElementById("sec");
 const min = document.getElementById("min");
-const hr = document.getElementById("hr");
 const startStop = document.getElementById("start-stop");
 const stopBtn = document.getElementById("reset");
 
@@ -96,7 +96,6 @@ stopBtn.onclick = function() {
 	startStop.textContent = "Start";
 	timer.reset();
 }
-
 
 
 
