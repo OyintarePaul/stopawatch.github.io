@@ -1,0 +1,16 @@
+{
+	"name": "Stopawatch",
+	"short_name": "Stopawatch",
+	"description": "A simple stopwatch right in your mobile phone",
+	"icons": [
+		{
+			"src": "icons/icon.png",
+			"sizes": "32x32",
+			"type": "image/png"
+		}
+	],
+	"start_url": "/index.html",
+	"display": "standalone",
+	"theme_color": "#33daf1",
+	"background_color": "#33daf1"
+}
